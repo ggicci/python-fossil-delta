@@ -1,5 +1,6 @@
 """
-This module implements the delta compress algorithm.
+This module encapsulates the C API of fossil delta compression algorithm to
+simplify its use in Python.
 """
 
 from _delta import ffi, lib

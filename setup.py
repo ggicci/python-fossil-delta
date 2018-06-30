@@ -5,7 +5,7 @@ setup(
     version='18.6.0',
     description='Delta compression algorithm from fossil SCM',
     long_description=open('README.md', 'rt').read(),
-    url='https://github.com/ggicci/fossil-delta',
+    url='https://github.com/ggicci/python-fossil-delta',
     author='Ggicci',
     author_email='ggicci@163.com',
     license='MIT',

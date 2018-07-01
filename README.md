@@ -21,3 +21,15 @@ Other implementations:
 ```
 pip install python-fossil-delta
 ```
+
+## Example
+
+```python
+import fossil_delta as fossil
+
+
+def main():
+    delta = fossil.create_delta('abc', 'abcdef')
+    out = fossil.apply_delta('abc', delta)
+    print out  # --> abcdef
+```

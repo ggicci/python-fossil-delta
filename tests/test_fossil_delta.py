@@ -4,9 +4,9 @@ import fossil_delta as fossil
 
 class TestFossilDelta(unittest.TestCase):
     def test_delta_apply(self):
-        delta = fossil.create_delta('abcdef', 'defghi')
-        out = fossil.apply_delta('ab', delta)
-        self.assertEqual(out, 'defghi')
+        delta = fossil.create_delta('abc', 'abcdef')
+        out = fossil.apply_delta('abc', delta)
+        self.assertEqual(out, 'abcdef')
 
 
 def main():

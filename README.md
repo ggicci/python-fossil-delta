@@ -25,11 +25,11 @@ pip install python-fossil-delta
 ## Example
 
 ```python
-import fossil_delta as fossil
+import fossil_delta
 
 
 def main():
-    delta = fossil.create_delta('abc', 'abcdef')
-    out = fossil.apply_delta('abc', delta)
+    delta = fossil_delta.create_delta('abc', 'abcdef')
+    out = fossil_delta.apply_delta('abc', delta)
     print out  # --> abcdef
 ```

@@ -39,7 +39,7 @@ def create_delta(src, dst):
     if n < 0:
         raise Exception('lib.delta_create failed, return code: %d' % n)
 
-    return bytes(ffi.string(out, n))
+    return bytes(ffi.unpack(out, n))
 
 
 def apply_delta(src, delta):
@@ -66,7 +66,7 @@ def apply_delta(src, delta):
         raise Exception(
             'lib.delta_output_size failed, return code: %d' % out_size)
 
-    out = ffi.new('char[]', out_size)
+    out = ffi.new('char[]', out_size + 1)
     n = lib.delta_apply(
         src,
         ffi.cast('int', len(src)),
@@ -78,4 +78,4 @@ def apply_delta(src, delta):
     if n < 0:
         raise Exception('lib.delta_apply failed, return code: %d' % n)
 
-    return bytes(ffi.string(out, n))
+    return bytes(ffi.unpack(out, n))

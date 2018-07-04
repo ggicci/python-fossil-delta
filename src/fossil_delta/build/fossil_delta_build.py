@@ -8,16 +8,16 @@ ffibuilder = FFI()
 MODULE_NAME = 'fossil_delta._delta'
 CUR_DIR = os.path.dirname(__file__)
 
-with open(os.path.join(CUR_DIR, 'src/fossil_delta/delta.h'), 'rt') as f:
+with open(os.path.join(CUR_DIR, '../delta.h'), 'rt') as f:
     ffibuilder.cdef(f.read())
 
-with open(os.path.join(CUR_DIR, 'src/fossil_delta/delta.c'), 'rt') as f:
+with open(os.path.join(CUR_DIR, '../delta.c'), 'rt') as f:
     ffibuilder.set_source(
         MODULE_NAME,
         f.read(),
         source_extension='.c',
         extra_compile_args=[
-            '-I' + os.path.join(CUR_DIR, 'src/fossil_delta'),
+            '-I' + os.path.dirname(CUR_DIR),
         ],
     )
 

@@ -14,13 +14,10 @@ setup(
     package_dir={'': 'src'},
     packages=['fossil_delta'],
     package_data={
-        'fossil_delta': ['*.h', '*.c'],
+        'fossil_delta': ['*.h', '*.c', 'build/*.py'],
     },
-    data_files=[
-        ('.', ['fossil_delta_build.py']),
-    ],
     cffi_modules=[
-        'fossil_delta_build.py:ffibuilder',
+        'src/fossil_delta/build/fossil_delta_build.py:ffibuilder',
     ],
     install_requires=['cffi>=1.11.5'],
     platforms='any',

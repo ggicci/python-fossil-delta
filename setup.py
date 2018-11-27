@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='python-fossil-delta',
-    version='18.7.5',
+    version='18.11.27',
     description='Delta compression algorithm from fossil SCM',
     long_description=open('README.md', 'rt').read(),
     url='https://github.com/ggicci/python-fossil-delta',

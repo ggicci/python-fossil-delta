@@ -29,7 +29,7 @@ import fossil_delta
 
 
 def main():
-    delta = fossil_delta.create_delta('abc', 'abcdef')
-    out = fossil_delta.apply_delta('abc', delta)
-    print out  # --> abcdef
+    delta = fossil_delta.create_delta(b'abc', b'abcdef')
+    out = fossil_delta.apply_delta(b'abc', delta)
+    print(out)  # --> abcdef
 ```

@@ -3,24 +3,19 @@ This module encapsulates the C API of fossil delta compression algorithm to
 simplify its use in Python.
 """
 
-from _delta import ffi, lib
+from ._delta import ffi, lib
 
 
 def create_delta(src, dst):
     """
     Create a new delta.
 
-    Parameters
-    ----------
-    src : bytes
-        The source or pattern content
-    dst : bytes
-        The target content
+    Args:
+        src: The source or pattern content. (bytes)
+        dst: The target content. (bytes)
 
-    Returns
-    -------
-    bytes:
-        The delta
+    Returns:
+        The delta. (bytes)
     """
     assert isinstance(src, bytes), 'src must be type of bytes'
     assert isinstance(dst, bytes), 'dst must be type of bytes'
@@ -46,17 +41,12 @@ def apply_delta(src, delta):
     """
     Apply a delta.
 
-    Parameters
-    ----------
-    src : bytes
-        The source or pattern content
-    delta : bytes
-        Delta to apply to the pattern
+    Args:
+        src: The source or pattern content.
+        delta: Delta to apply to the pattern.
 
-    Returns
-    -------
-    bytes:
-        The patched result
+    Returns:
+        The patched result.
     """
     assert isinstance(src, bytes), 'src must be type of bytes'
     assert isinstance(delta, bytes), 'delta must be type of bytes'
